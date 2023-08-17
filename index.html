@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cribbage Counter</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <h2>Cribbage Hand Counter</h2>
+    <div class="cardContainer">
+
+    </div>
+    <div class="slotContainer">
+        <div class="slot slot1">card 1</div>
+        <div class="slot slot2">card 2</div>
+        <div class="slot slot3">card 3</div>
+        <div class="slot slot4">card 4</div>
+        <div class="slot cut">cut</div>
+    </div>
+    <input type="checkbox" id="crib">
+    <label for "crib" id="label">check this box if this is your crib</label>    
+    <button id="button" onclick="calculate();">calculate!</button>
+    <p id="runs"></p>
+    <p id="pairs"></p>
+    <p id="fifteens"></p>
+    <p id="flushes"></p>
+    <p id="nobs"></p>
+    <p id="final"></p>
+    <script src="script.js"></script>
+
+    
+</body>
+</html>
