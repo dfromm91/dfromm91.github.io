@@ -111,7 +111,7 @@ function dragDrop(e){
             }
         }
         target.classList.add('occupied')
-    }
+    }}
 
   function dragOver(e){
     e.preventDefault();
