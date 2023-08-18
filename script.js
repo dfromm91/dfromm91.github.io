@@ -1,5 +1,5 @@
 const cardContainer = document.querySelector('.cardContainer');
-const cards = []; // This array will store all the box elements
+const cards = []; 
 const rank = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'] 
 const suit = ["♣","♦","♥","♠"]
 
@@ -12,7 +12,6 @@ const cut = document.querySelector('.cut')
 
 let beingDragged;
 let hand=[];
-let loopCount=1;
 let deck=[];
 let containerSlots=[];
 let target;
@@ -112,12 +111,10 @@ function dragDrop(e){
             }
         }
         target.classList.add('occupied')
-    }else{console.log('hey')} }
+    }
 
   function dragOver(e){
-   
     e.preventDefault();
-      console.log('drop')
   }
 
 slot1.addEventListener('drop', dragDrop)
@@ -151,7 +148,6 @@ function textBack(){
 }
 
 function putBack(e){
-    console.log('hi')
     if(beingDragged.classList.contains('inSlot')){
         beingDragged.classList.remove('inSlot')
         for(i=0; i<52; i++){
@@ -178,18 +174,14 @@ function calculate(){
         }
     }
     hand.sort(function(a, b){return a.rank-b.rank});
-    console.log(hand)
     }
     
     function runs(){
        
         for (i=0; i<4; i++){
-            console.log(hand[i].rank)
             if(hand[i+1].rank===hand[i].rank){
              hand[i].keep=false;
              hand[i+1].keep=false;  
-             console.log('over here')
-           
             }
 
         }
@@ -200,8 +192,6 @@ function calculate(){
             rankArr.push(hand[i].rank)
         }
         noduplicates=[...new Set(rankArr)]
-        console.log(duplicates)
-        console.log(noduplicates)
 
         if(noduplicates.length>2){
             for(i=0; i<noduplicates.length-2; i++){
@@ -213,7 +203,6 @@ function calculate(){
                 }
             }
             if(duplicates.length>0  && runSet.includes(duplicates[0]) ){
-                    console.log('we got here')
                 multiplier=duplicates.length}
             
             if(seqPoints>0){runPoints=(seqPoints+2)*multiplier}
@@ -224,10 +213,6 @@ function calculate(){
             hand[i].keep=true
          }
        finalPoints.push(runPoints)
-       console.log(multiplier)
-       console.log(seqPoints)
-       console.log(runPoints)
-       console.log(duplicates[0])
     }
 
     function pairs(){
@@ -291,13 +276,9 @@ function calculate(){
             if (sum==15){
                 fifteensPoints+=2;
             }
-            
-            console.log("fifteens points: "+fifteensPoints);
       finalPoints.push(fifteensPoints)
     }
     function flush(){
-      
-        
         for(i=0;i<5;i++){
             if(hand[i].cut==false){
             suitArr.push(hand[i].suit)
@@ -312,14 +293,12 @@ function calculate(){
             if(crib===false){
                 if(cutt===suitArr[0]){
                     flushPoints=5
-                    console.log('sup')
                 }else{flushPoints=4}
             }
         }else{flushPoints=0}
         finalPoints.push(flushPoints)
     }
     function nobs(){
-        
         for(i=0; i<5; i++){
             if (hand[i].cut===true){
                 toMatch=hand[i].suit
@@ -337,9 +316,8 @@ function calculate(){
 
     }
     function initVar(){
-        beingDragged=null;
+     beingDragged=null;
      hand=[];
-     loopCount=1;
      deck=[];
      containerSlots=[];
      target;
@@ -381,7 +359,7 @@ function calculate(){
         printPoints();
         initVar();
     } else {
-        document.getElementById('runs').innerHTML="Fill in all card slots fitst!"
+        document.getElementById('runs').innerHTML="Fill in all card slots first!"
         document.getElementById('pairs').innerHTML=" "
         document.getElementById('fifteens').innerHTML=" "
         document.getElementById('flushes').innerHTML=" "
