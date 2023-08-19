@@ -13,7 +13,7 @@ body{
     
 }
 p{
-    margin:3px;
+    margin:1px;
 }
 .cardContainer{
     display: grid;
@@ -54,7 +54,7 @@ p{
     background-color: black;
     color:white;
     margin-top:20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 #button:hover{
     cursor:pointer;
