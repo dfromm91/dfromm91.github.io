@@ -772,12 +772,10 @@ let isDragging = false;
 
 document.querySelector('.card').addEventListener('touchstart', function(event) {
     isDragging = true;
-    document.body.style.overflow = 'hidden';  // Disable scrolling on the body
 });
 
 document.querySelector('.card').addEventListener('touchend', function(event) {
     isDragging = false;
-    document.body.style.overflow = '';  // Re-enable scrolling on the body
 });
 
 document.querySelector('.card').addEventListener('touchmove', function(event) {
