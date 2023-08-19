@@ -60,7 +60,7 @@ p{
 .containerSlot{
     border: 1px dotted white;
     width: 25px;
-    height: 38px;
+    height:38px;
 }
 .occupied{
     border:1px solid white;
