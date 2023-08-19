@@ -767,3 +767,21 @@ var DragDropTouch;
 //# sourceMappingURL=DragDropTouchNoWijmo.js.map
 
 
+// this is a gpt addition
+let isDragging = false;
+
+document.querySelector('.card').addEventListener('touchstart', function(event) {
+    isDragging = true;
+});
+
+document.querySelector('.card').addEventListener('touchend', function(event) {
+    isDragging = false;
+});
+
+document.querySelector('.card').addEventListener('touchmove', function(event) {
+    if (isDragging) {
+        event.preventDefault();
+    }
+}, { passive: false });
+
+
