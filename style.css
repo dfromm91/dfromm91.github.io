@@ -1,3 +1,7 @@
+html{
+     overflow: hidden;
+     overscroll-behavior: none;
+}
 body{
     height: 100vh;
     margin:0;
@@ -6,7 +10,7 @@ body{
     flex-direction: column;
     align-items: center;
     background-color: aqua;
-    overscroll-behavior-y: none;
+    
 }
 p{
     margin:3px;
