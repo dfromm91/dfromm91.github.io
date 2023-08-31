@@ -1,0 +1,277 @@
+body {
+    /* Set the background color to green */
+    
+    background-image: 
+    radial-gradient(circle, white 10%, transparent 11%),
+    radial-gradient(circle, white 10%, green 11%);
+background-size: 40px 40px; /* Size of the circles */
+background-position: 0 0, 20px 20px; /* Makes it look like a pattern by shifting the second set of circles */
+    
+    /* To make sure the pattern covers the entire viewport, even when the content exceeds the viewport height */
+    height: 100vh;
+    margin: 0;  /* Remove default margin */
+    overflow: auto;  /* Add scroll if content overflows */
+}
+
+
+.game{
+    height: 60vh;
+    margin:0;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
+}
+.board{
+    width:150px;
+    height:500px;
+    background-color: rgb(196, 128, 40);
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top:1em;
+    margin-right:2em;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    z-index: 5;
+}
+
+
+.pegHole{
+    background-color: black;
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    margin-left: 3px;
+}
+.p1pegs{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 5px;
+    margin-top:20px;
+    margin-left:10px;
+    margin-right:40px;
+    margin-bottom: 30px;
+    color:white;
+}
+.p2pegs{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 5px;
+    margin-top:20px;
+    margin-left:10px;
+    margin-right:10px;
+    margin-bottom: 30px;
+    color:white;
+}
+
+.banner{
+    width:100%;
+    height:100px;
+    background-color:rgb(7, 60, 151);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color:rgb(84, 172, 172);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.startPeg{
+    background-color: gray;
+}
+.opCards{
+    display:flex;
+    flex-direction: row;
+    width:400px;
+    height:7em;
+    margin-top: 1em;
+    margin-bottom: 3em;
+}
+.playerCards{
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    height:7em;
+    margin-top: 430px;
+    /* margin-bottom: 3em; */
+    position: fixed;
+}
+.gameplayItems{
+    display:flex;
+    flex-direction: column;
+}
+.pegging{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:400px;
+    position: fixed;
+    margin-top: 180px;
+}
+#button{
+    width:70px;
+    height:55px;
+    margin-top:0;
+    margin-left:0;
+    background-color:rgb(1, 20, 93);
+    color:white;
+    border-radius: 10px;
+    
+    
+}
+.buttonHolder{
+    width:60px;
+    height:40px;
+    margin-top:340px;
+    margin-left:80px;
+    position: fixed;
+}
+.card-back {
+    width: 60px;
+    height: 80px;
+    background-color: red; /* Change to your preferred color */
+    border-radius: 10px;
+    border: 1px solid red;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); /* Gives a slight shadow for depth */
+    
+    /* The following is just a simple pattern for demonstration */
+    background-image: 
+        radial-gradient(circle, white 10%, transparent 11%),
+        radial-gradient(circle, white 10%, red 11%);
+    background-size: 20px 20px; /* Size of the circles */
+    background-position: 0 0, 10px 10px; /* Makes it look like a pattern by shifting the second set of circles */
+    margin:3px;
+}
+
+.card-front {
+    width: 60px;
+    height: 80px;
+    background-color: white;
+    border: 1px solid black;  
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    margin:3px;
+}
+.crib{
+    display:grid;
+
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.popup
+{
+   position: fixed;
+   width:250px;
+   height:200px;
+   background-color: rgb(187, 158, 158);
+   z-index: 1000;
+   margin-left:40vw;
+   margin-top: 20vh;
+   box-shadow: 2px 2px 10px rgba(56, 55, 55, 0.7);
+   border-radius: 5%;
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+}
+.popupbutton{
+    margin-top: 20px;
+    width:60px;
+    height:40px;
+}
+.selected{
+    border:3px solid limegreen;
+}
+#pegBox{
+    width:60px;
+    height:80px;
+    position:relative /* might break stuff*/
+}
+.info{
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    height:7em;
+    margin-top: 400px;
+    /* margin-bottom: 3em; */
+    position: fixed;
+    justify-content: center;
+    color: darkmagenta;
+    font-size: x-large;
+}
+#pegBox > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.red{
+    color:red
+}
+.occupied{
+    background-color: purple;
+    border: 2px solid black;
+}
+.occupied2{
+    background-color: orange;
+    border: 2px solid black;
+}
+.button{
+    width:60px;
+    height:40px;
+    margin-top:0;
+    margin-left:0;
+
+}
+.red{
+    color:red;
+}
+.hidden {
+    display: none;
+  }
+  
+  #custom-alert {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .alert-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 2px black;
+  }
+  p{
+    width: 100px;
+    height:75px;
+    margin-top: 355px;
+    margin-left:165px;
+    position:fixed;
+    display:flex;
+    color:burnt rgb(54, 5, 5);
+    font-weight: bolder;
+    flex-wrap: wrap;
+  }
+  h4{
+    margin-top:360px;
+    position: fixed;
+    display: flex;
+    font-weight: bolder;
+  }
+  .grey{
+    background-color: rgb(196, 128, 40);
+  }
+  h2{
+    display:flex;
+    position: fixed;
+    margin-top:530px;
+    margin-left:420px;
+ 
+  }
