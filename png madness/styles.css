@@ -1,0 +1,127 @@
+#sidebar {
+  position: fixed;
+  left: -250px; /* Initially hidden off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: rgba(50, 238, 209, 0.543); /* Semi-transparent background */
+  overflow-x: hidden;
+  transition: 0.5s; /* Smooth transition for showing/hiding */
+  padding-top: 60px; /* Optional: Adjust as needed */
+  z-index: 2; /* Ensures it's above other content */
+  font-size: 30px;
+  display: flex; /* Use Flexbox */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: space-around; /* Evenly distribute items vertically */
+  align-items: center; /* Align items horizontally in the center */
+  height: 100%; /* Take full height of the viewport */
+  filter: drop-shadow(0 0 0.75rem crimson);
+}
+
+#sidebar a {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 22px;
+  color: rgb(94, 2, 2);
+  display: block;
+  transition: 0.3s;
+  font-family: "tiki", sans-serif;
+  font-size: 40px;
+}
+
+#sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(
+    223,
+    241,
+    143,
+    0.543
+  ); /* Semi-transparent background */
+  color: rgb(94, 2, 2); /* Text color */
+  text-align: center;
+  padding: 10px 0;
+  font-size: 24px;
+  z-index: 1; /* Ensure it's on top of all other content */
+  filter: drop-shadow(0 0 0.75rem crimson);
+}
+.iconic {
+  position: relative;
+  float: right;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -3; /* Waves at the back */
+}
+
+.main-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  z-index: -2; /* Ensures this container is above the waves */
+}
+
+.tropical-leaves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("Green\ Tropical\ Leaves\ Border\ Png\ -\ 3000x2400.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1; /* Leaves above the waves but below the island image */
+  opacity: 0.4;
+}
+
+.stuff {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  z-index: 0; /* Island image at the top */
+  opacity: 0.7;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+@font-face {
+  font-family: "tiki"; /* Give your font a name */
+  src: url("Supertiki-nR7P.ttf") format("truetype"); /* Provide the path to your TTF file */
+}
+.page-header {
+  font-family: "tiki", sans-serif;
+  font-size: 70px;
+}
+#menu-arrow {
+  position: fixed;
+  left: 0;
+  top: 50%; /* Position it at the middle of the screen vertically */
+  transform: translateY(-50%);
+  background-color: rgba(223, 241, 143, 0.543);
+  color: white;
+  padding: 5px 10px;
+  cursor: pointer; /* Change cursor to indicate it's clickable */
+  z-index: 3; /* Above other content */
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
